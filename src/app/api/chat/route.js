@@ -1,9 +1,8 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 
-// Inicializa o SDK do Gemini com a chave guardada nas variáveis de ambiente
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+// Inicializa igualzinho ao Henshin.AI
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-// System Prompt: Define a personalidade e o conhecimento da Hina
 const SYSTEM_PROMPT = `
 Você é a Hina, a assistente virtual e copiloto do portfólio do Felipe.
 Sua missão é responder os visitantes de forma amigável, direta, inteligente e com um toque de energia e entusiasmo.
@@ -25,27 +24,26 @@ Suas Diretrizes:
 
 export async function POST(request) {
   try {
-    const { message } = await request.json();
+    const { mensagem } = await request.json();
 
-    if (!message) {
+    if (!mensagem) {
       return new Response(
         JSON.stringify({ error: 'A mensagem não pode estar vazia.' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    // Carrega o modelo do Gemini (gemini-1.5-flash é rápido e leve)
-    const model = genAI.getGenerativeModel({
-      model: 'gemini-1.5-flash',
-      systemInstruction: SYSTEM_PROMPT,
+    // Chamada usando o SDK novo (@google/genai)
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: mensagem,
+      config: {
+        systemInstruction: SYSTEM_PROMPT,
+      }
     });
 
-    // Gera a resposta com base na mensagem do usuário
-    const result = await model.generateContent(message);
-    const responseText = result.response.text();
-
     return new Response(
-      JSON.stringify({ reply: responseText }),
+      JSON.stringify({ resposta: response.text }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {

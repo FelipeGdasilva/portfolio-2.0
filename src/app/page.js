@@ -1,56 +1,88 @@
 "use client";
 
-import { useState,useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import HinaAvatar from "@/components/HinaAvatar";
 import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState("idle");
-  const [pergunta, setPergunta]= useState("");
-  const [mensagens, setMensagens] = useState([{
-    id: 1, text:"Olá! como posso ajudar você com seus projetos hoje?", sender:"hina"
-  }]);
+  const [pergunta, setPergunta] = useState("");
+  const [mensagens, setMensagens] = useState([
+    {
+      id: 1,
+      text: "Olá! Como posso ajudar você com seus projetos hoje?",
+      sender: "hina",
+    },
+  ]);
 
   const chatEndRef = useRef(null);
 
-  const handleKeyDow =(e) =>{
-    if (e.key === 'Entre' && !e.shiftkey){
+  // Permite enviar com 'Enter' mantendo 'Shift + Enter' para quebras de linha
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      enviarMensagem();
+      lidarComEnvio(e);
     }
-  }
+  };
 
-  useEffect(()=>{
-    chatEndRef.current?.scrollIntoView({behavior: 'smooth'});
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [mensagens]);
 
-  const lidarComEnvio = (e) => {
+  const lidarComEnvio = async (e) => {
     e.preventDefault();
 
     if (!pergunta.trim()) return;
- // 1. Adiciona a sua mensagem no  histórico
-    const novaMensagem ={ id: Date.now(), text: pergunta, sender:"user"};
-    setMensagens((prev)=> [...prev, novaMensagem]);
+
+    // 1. Adiciona a mensagem do usuário no histórico e limpa o input
+    const novaMensagem = { id: Date.now(), text: pergunta, sender: "user" };
+    setMensagens((prev) => [...prev, novaMensagem]);
+
     const textoUsuario = pergunta;
     setPergunta("");
 
-// 2. Lógica de "IA" (Simulação)
-    setTimeout(()=>{
-      let resposta = "Entendi! Estou processando essa  informação.";
-      if(textoUsuario.toLowerCase().includes("sonic")){
-        setActiveProject("sonic");
-        resposta = "Sonic Battle Universe ativado! Quer ver as  atualizações de arquitetura?";
-      }else if (textoUsuario.toLowerCase().includes("henshin")){
-        setActiveProject("henshin");
-        resposta = "Henshin.AI online! O sistema de automação está pronto.";
-      }else if(textoUsuario.toLocaleLowerCase().includes("hina")|| textoUsuario.toLocaleLowerCase().includes("landing")){
-        setActiveProject("hina-landing");
-        resposta ="Hina landing Page e o Timer de Boxe estão online e operado!";
+    try {
+      // 2. Chamada real para a API do Gemini via backend
+      const respostaAPI = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ mensagem: textoUsuario }),
+      });
+
+      const data = await respostaAPI.json();
+
+      if (!respostaAPI.ok) {
+        throw new Error(data.error || "Erro na API da Hina");
       }
-      // adiciona a resposta da hina  no histórico
-      setMensagens((prev) => [...prev,{id: Date.now() + 1, text: resposta, sender: "hina"}]);
-    }, 500);
-    setPergunta("");
+
+      // 3. Troca do Card de Projeto na tela com base no assunto falado
+      const textoBaixo = textoUsuario.toLowerCase();
+      if (textoBaixo.includes("sonic")) {
+        setActiveProject("sonic");
+      } else if (textoBaixo.includes("henshin")) {
+        setActiveProject("henshin");
+      } else if (textoBaixo.includes("hina") || textoBaixo.includes("landing")) {
+        setActiveProject("hina-landing");
+      }
+
+      // 4. Exibe no chat a resposta REAL gerada pelo Gemini
+      setMensagens((prev) => [
+        ...prev,
+        { id: Date.now() + 1, text: data.resposta, sender: "hina" },
+      ]);
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      setMensagens((prev) => [
+        ...prev,
+        {
+          id: Date.now() + 1,
+          text: "Ops! Tive um problema de conexão com meus sistemas. Tente novamente em instantes! 😅",
+          sender: "hina",
+        },
+      ]);
+    }
   };
 
   return (
@@ -105,7 +137,7 @@ export default function Home() {
             placeholder="Pergunte algo para Hina..."
             value={pergunta}
             onChange={(e) => setPergunta(e.target.value)}
-            onKeyDown={handleKeyDow}
+            onKeyDown={handleKeyDown}
             className="flex-1 bg-transparent text-white placeholder-purple-300/50 focus:outline-none px-2"
           />
           <button
