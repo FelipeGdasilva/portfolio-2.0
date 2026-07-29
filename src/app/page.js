@@ -91,36 +91,35 @@ export default function Home() {
       {/* Componente da Hina que recebe o status atual */}
       <HinaAvatar currentStatus={activeProject} />
 
-      {/* Grid de Cards dos Projetos */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 w-full max-w-4xl">
-        <ProjectCard
-          title="Henshin.AI"
-          description="Automação inteligente integrada com IA. Desenvolvido para o ecossistema n8n."
-          tags={["Node.js", "n8n", "AI Prompting"]}
-          isActive={activeProject === "henshin"}
-          onActivate={() => setActiveProject("henshin")}
-          onDeactivate={() => setActiveProject("idle")}
-        />
+        {/* Grid de Cards dos Projetos */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 w-full max-w-4xl">
+  <ProjectCard
+    title="Henshin.AI"
+    description="Assistente e automação inteligente com fluxos n8n, webhooks e IA generativa com resiliência contra falhas de execução."
+    tags={["Node.js", "Express", "n8n", "Gemini API"]}
+    isActive={activeProject === "henshin"}
+    onActivate={() => setActiveProject("henshin")}
+    onDeactivate={() => setActiveProject("idle")}
+  />
 
-        <ProjectCard
-          title="Sonic Battle Universe"
-          description="Web app focado no universo do Sonic. Atualmente passando por uma migração completa de arquitetura para otimização com Next.js."
-          tags={["React", "Next.js", "Tailwind CSS"]}
-          isActive={activeProject === "sonic"}
-          onActivate={() => setActiveProject("sonic")}
-          onDeactivate={() => setActiveProject("idle")}
-        />
+  <ProjectCard
+    title="Sonic Battle Universe"
+    description="Aplicação web temática com alta performance visual, refatoração em Clean Code, SEO aprimorado e migração para Next.js."
+    tags={["React", "Next.js", "TypeScript", "Tailwind CSS"]}
+    isActive={activeProject === "sonic"}
+    onActivate={() => setActiveProject("sonic")}
+    onDeactivate={() => setActiveProject("idle")}
+  />
 
-        <ProjectCard
-          title="Hina Landing Page + Timer Boxe"
-          description="Landing Page da marca pessoal com uma aplicação web de cronômetro integrada para treinos de boxe."
-          tags={["React", "Next.js", "Tailwind CSS", "JS Intervals"]}
-          isActive={activeProject === "hina-landing"}
-          onActivate={() => setActiveProject("hina-landing")}
-          onDeactivate={() => setActiveProject("idle")}
-        />
-      </div>
-
+  <ProjectCard
+    title="Hina Arena"
+    description="SPA de produtividade para treino de boxe. Controla ciclos de rounds (Foco/Descanso) 100% offline com Hook Customizado (useTimer)."
+    tags={["Next.js", "TypeScript", "Tailwind CSS"]}
+    isActive={activeProject === "hina-landing"}
+    onActivate={() => setActiveProject("hina-landing")}
+    onDeactivate={() => setActiveProject("idle")}
+  />
+</div>
       {/* Seção do Chat Controlado */}
       <div className="w-full max-w-md mx-auto mt-8 px-4"> 
         <div className="flex flex-col gap-4 w-full max-w-md max-auto mb-4 p-4">

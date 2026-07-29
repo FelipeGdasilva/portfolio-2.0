@@ -6,7 +6,7 @@ import Image from "next/image";
 const HINA_RESPONSES = {
   idle: {
     image: "/images/hina-default.png", // Sua imagem dela tomando café
-    text: "Olá! Sou a Hina. Passe o mouse sobre os meus projetos para eu te contar mais sobre eles! ☕"
+    text: "Olá! Sou a Hina. Passe o mouse sobre os projetos ou converse comigo no chat para saber mais! ☕⚡"
   },
   henshin: {
     image: "/images/hina-focused.png", // Imagem focada
@@ -14,11 +14,11 @@ const HINA_RESPONSES = {
   },
   sonic: {
     image: "/images/hina-focused.png", // Imagem focada
-    text: "O Sonic Battle Universe é meu xodó! Estamos migrando ele de React Puro para Next.js e Tailwind CSS para deixar a performance voando. 🦔⚡"
+    text: "O Sonic Battle Universe foca em UX e Clean Code! Migramos de React para Next.js e Tailwind CSS para deixar a performance e o SEO voando. 🦔⚡"
   },
   "hina-landing": {
     image: "/images/hina-focused.png", // Imagem focada
-    text: "🥊 Esta é a minha Landing Page Oficial! Além de consolidar minha marca pessoal, criei nela um Cronômetro de boxe integrado para gerenciar meus  rounds e pausas de treino  usando lógica de javaScript."
+    text: "O Hina Arena é focado em treino de boxe! É uma SPA 100% offline que gerencia rounds e pausas com um Hook Customizado (useTimer) isolando a regra de negócio. 🥊⚡"
   }
 };
 
