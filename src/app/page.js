@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import HinaAvatar from "@/components/HinaAvatar";
 import ProjectCard from "@/components/ProjectCard";
+import TechSkills from '@/components/TechSkills'; 
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState("idle");
@@ -120,6 +121,9 @@ export default function Home() {
     onDeactivate={() => setActiveProject("idle")}
   />
 </div>
+
+    <TechSkills />
+
       {/* Seção do Chat Controlado */}
       <div className="w-full max-w-md mx-auto mt-8 px-4"> 
         <div className="flex flex-col gap-4 w-full max-w-md max-auto mb-4 p-4">
