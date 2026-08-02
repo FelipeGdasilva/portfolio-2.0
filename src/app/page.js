@@ -102,6 +102,7 @@ export default function Home() {
     description="Assistente e automação inteligente com fluxos n8n, webhooks e IA generativa com resiliência contra falhas de execução."
     tags={["Node.js", "Express", "n8n", "Gemini API"]}
     isActive={activeProject === "henshin"}
+    imageSrc="/images/henshin.ai.png"
     onActivate={() => setActiveProject("henshin")}
     onDeactivate={() => setActiveProject("idle")}
   />
@@ -112,6 +113,7 @@ export default function Home() {
     tags={["React", "Next.js", "TypeScript", "Tailwind CSS"]}
     isActive={activeProject === "sonic"}
     onActivate={() => setActiveProject("sonic")}
+    imageSrc="/images/sonic-battle-universe.png"
     onDeactivate={() => setActiveProject("idle")}
   />
 
@@ -120,6 +122,7 @@ export default function Home() {
     description="SPA de produtividade para treino de boxe. Controla ciclos de rounds (Foco/Descanso) 100% offline com Hook Customizado (useTimer)."
     tags={["Next.js", "TypeScript", "Tailwind CSS"]}
     isActive={activeProject === "hina-landing"}
+    imageSrc="/images/hina-arena.png"
     onActivate={() => setActiveProject("hina-landing")}
     onDeactivate={() => setActiveProject("idle")}
   />
