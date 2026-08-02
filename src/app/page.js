@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import HinaAvatar from "@/components/HinaAvatar";
 import ProjectCard from "@/components/ProjectCard";
 import TechSkills from '@/components/TechSkills'; 
+import { AboutSection } from "@/components/AboutSection";
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState("idle");
@@ -88,6 +89,8 @@ export default function Home() {
 
   return (
     <main className="p-8 bg-slate-950 min-h-screen text-white flex flex-col items-center justify-center">
+      
+      <AboutSection />
       
       {/* Componente da Hina que recebe o status atual */}
       <HinaAvatar currentStatus={activeProject} />
