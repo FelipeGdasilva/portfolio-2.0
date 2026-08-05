@@ -5,6 +5,7 @@ import HinaAvatar from "@/components/HinaAvatar";
 import ProjectCard from "@/components/ProjectCard";
 import TechSkills from '@/components/TechSkills'; 
 import { AboutSection } from "@/components/AboutSection";
+import Image from 'next/image';
 
 export default function Home() {
   const [activeProject, setActiveProject] = useState("idle");
@@ -90,6 +91,10 @@ export default function Home() {
   return (
     <main className="p-8 bg-slate-950 min-h-screen text-white flex flex-col items-center justify-center">
       
+      <div className="fixed bottom-0 left-0 pointer-events-none z-0  hidden md:block opacity-25 hover:opacity-40 transition-opacity duration-500">
+        <Image src="/images/Hina-Avatar.png" alt="Hina Avatar Background"  width={350} height={350} className="object-contain -ml-6 -mb-4" priority/>
+      </div>
+
       <AboutSection />
       
       {/* Componente da Hina que recebe o status atual */}
