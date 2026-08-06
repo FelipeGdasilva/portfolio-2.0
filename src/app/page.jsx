@@ -106,6 +106,7 @@ export default function Home() {
     title="Henshin.AI"
     description="Assistente e automação inteligente com fluxos n8n, webhooks e IA generativa com resiliência contra falhas de execução."
     tags={["Node.js", "Express", "n8n", "Gemini API"]}
+    githubUrl="https://github.com/FelipeGdasilva/Henshin.AI"
     isActive={activeProject === "henshin"}
     imageSrc="/images/henshin.ai.png"
     onActivate={() => setActiveProject("henshin")}
@@ -116,6 +117,7 @@ export default function Home() {
     title="Sonic Battle Universe"
     description="Aplicação web temática com alta performance visual, refatoração em Clean Code, SEO aprimorado e migração para Next.js."
     tags={["React", "Next.js", "TypeScript", "Tailwind CSS"]}
+    githubUrl="https://github.com/FelipeGdasilva/Sonic-Battle-Universe"
     isActive={activeProject === "sonic"}
     onActivate={() => setActiveProject("sonic")}
     imageSrc="/images/sonic-battle-universe.png"
@@ -126,6 +128,8 @@ export default function Home() {
     title="Hina Arena"
     description="SPA de produtividade para treino de boxe. Controla ciclos de rounds (Foco/Descanso) 100% offline com Hook Customizado (useTimer)."
     tags={["Next.js", "TypeScript", "Tailwind CSS"]}
+    githubUrl="https://github.com/FelipeGdasilva/hina-landing-page"
+    demoUrl="https://hina-landing-page.vercel.app/"
     isActive={activeProject === "hina-landing"}
     imageSrc="/images/hina-arena.png"
     onActivate={() => setActiveProject("hina-landing")}
