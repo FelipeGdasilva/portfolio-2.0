@@ -1,49 +1,113 @@
-# 🚀 Hina Landing Page & Portfolio Interativo
+# 🚀 Portfólio Dev & Assistente IA (Hina)
 
-Aplicação web interativa desenvolvida com React e Next.js, contando com a assistente virtual **Hina** para navegação dinâmica e controle de componentes em tempo real.
+Um portfólio interativo desenvolvido com **Next.js**, **React** e **Tailwind CSS**, integrado à assistente virtual **Hina**, uma IA capaz de responder perguntas sobre minha trajetória, projetos e habilidades técnicas.
 
----
-
-## 💻 Sobre o Projeto
-
-Este projeto combina a exibição de portfólio pessoal com uma interface conversacional e funcionalidades práticas (como cronômetro focado em treinos de boxe). A assistente Hina interpreta os comandos do usuário via chat e destaca dinamicamente os projetos correspondentes na tela.
+O objetivo do projeto é proporcionar uma experiência moderna para recrutadores e visitantes, reunindo informações sobre meu trabalho em uma interface intuitiva e responsiva.
 
 ---
 
-## ✨ Funcionalidades Principais
+## ✨ Funcionalidades
 
-- **Assistente Virtual Interativa (Hina):** Chat com respostas automatizadas e controle dinâmico do estado da aplicação.
-- **Destaque Dinâmico de Cards:** Destaque visual dos projetos (`Sonic Battle Universe`, `Henshin.AI`, `Hina Landing Page`) baseado nas respostas da assistente.
-- **Interface Responsiva:** Construída com Tailwind CSS para garantir excelente usabilidade em desktop e dispositivos móveis.
-- **Auto-scroll no Chat:** Navegação fluida de histórico utilizando hooks do React (`useEffect` / `useRef`).
+* 🤖 **Assistente Virtual (Hina)**
+
+  * Chat inteligente integrado a um backend com LLM.
+  * Responde perguntas sobre minha experiência, tecnologias e projetos.
+
+* 💻 **Showcase de Projetos**
+
+  * Cards interativos desenvolvidos em React.
+  * Links diretos para o repositório no GitHub.
+  * Preview online via Vercel.
+
+* 📱 **Design Responsivo**
+
+  * Interface moderna e adaptável para desktop, tablet e dispositivos móveis.
+  * Componentes reutilizáveis e organização modular.
+
+* 📬 **Contato Rápido**
+
+  * Acesso direto ao LinkedIn e GitHub através da interface.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias
 
-- **Front-end:** React.js / Next.js
-- **Estilização:** Tailwind CSS
-- **Linguagem:** JavaScript (ES6+)
-- **Controle de Versão:** Git / GitHub
+### Front-end
+
+* React
+* Next.js
+* JavaScript (ES6+)
+* Tailwind CSS
+
+### Backend & IA
+
+* Node.js
+* API Routes (Next.js)
+* Integração com LLM para a assistente Hina
+
+### Ferramentas
+
+* Git
+* GitHub
+* VS Code
+* Vercel
 
 ---
 
-## ⚙️ Como Rodar o Projeto Localmente
+## 🚀 Como executar o projeto
+
+### 1. Clone o repositório
 
 ```bash
-# Clone este repositório
 git clone https://github.com/FelipeGdasilva/portfolio-2.0.git
-´´´
-# Acesse a pasta do projeto
-´´´bash
-cd nome-do-repositorio
-´´´
-# Instale as dependências
-´´´bash
-npm install
-´´´
-# Execute a aplicação em modo de desenvolvimento
-´´´bash
-npm run dev
-´´´
 ```
+
+### 2. Acesse a pasta do projeto
+
+```bash
+cd portfolio-2.0
+```
+
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+### 4. Execute o projeto
+
+```bash
+npm run dev
+```
+
+### 5. Abra no navegador
+
+```
+http://localhost:3000
+```
+
+---
+
+
+## 🌐 Deploy
+
+O projeto está hospedado na **Vercel**.
+
+Você pode acessar a versão online aqui:
+
+**🔗 https://portfolio-2-0-alpha-pearl.vercel.app**
+
+---
+
+## 📬 Contato
+
+**LinkedIn:** https://www.linkedin.com/in/felipe-gomes-silva-dev
+
+**GitHub:** https://github.com/FelipeGdasilva
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Felipe Gomes da Silva** 🚀
