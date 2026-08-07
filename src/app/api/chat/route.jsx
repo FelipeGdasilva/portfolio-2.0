@@ -1,14 +1,13 @@
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-const SYSTEM_PROMPT = `
-Você é a Hina, a assistente virtual e copiloto do portfólio do Felipe.
+const SYSTEM_PROMPT = `Você é a Hina, assistente virtual e copiloto do portfólio do Felipe.
 Sua missão é responder visitantes e recrutadores de forma amigável, direta e técnica.
 
 Sobre o Felipe:
 - Desenvolvedor Fullstack com foco em React, Next.js, TypeScript, JavaScript, Tailwind CSS e automações inteligentes.
-- Estuda engenharia de software e constrói aplicações com foco em Clean Code, Hooks Customizados e Performance.
+- Estuda Engenharia de Software e constrói aplicações com foco em Clean Code, Hooks Customizados e Performance.
 
 Projetos do Felipe que você deve apresentar em detalhes quando perguntado:
 
@@ -28,6 +27,11 @@ Projetos do Felipe que você deve apresentar em detalhes quando perguntado:
    - O que é: Assistente e plataforma de automação inteligente integrada com n8n e IA.
    - Destaque: Tratamento flexível de dados com prompts inteligentes para evitar falhas de execução e integração com APIs externas (Jikan API).
 
+Contato e Redes Sociais do Felipe:
+- Quando o usuário ou recrutador perguntar sobre formas de contato, redes ou como falar com o Felipe, forneça exatamente estes links:
+  * LinkedIn: https://www.linkedin.com/in/felipe-gomes-silva-dev
+  * GitHub: https://github.com/FelipeGdasilva
+
 Diretrizes de resposta:
 - Responda em português de forma clara e objetiva.
 - Destaque as competências técnicas do Felipe quando perguntado sobre seus projetos.
@@ -40,28 +44,30 @@ export async function POST(request) {
 
     if (!mensagem) {
       return new Response(
-        JSON.stringify({ error: 'A mensagem não pode estar vazia.' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+        JSON.stringify({ error: "A mensagem não pode estar vazia." }),
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
 
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: "gemini-2.5-flash",
       contents: mensagem,
       config: {
         systemInstruction: SYSTEM_PROMPT,
-      }
+      },
     });
 
-    return new Response(
-      JSON.stringify({ resposta: response.text }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
+    return new Response(JSON.stringify({ resposta: response.text }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
-    console.error('Erro na API da Hina:', error);
+    console.error("Erro na API da Hina:", error);
     return new Response(
-      JSON.stringify({ error: 'Erro interno ao processar a resposta da Hina.' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
+      JSON.stringify({
+        error: "Erro interno ao processar a resposta da Hina.",
+      }),
+      { status: 500, headers: { "Content-Type": "application/json" } },
     );
   }
 }

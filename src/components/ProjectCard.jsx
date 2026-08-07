@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 
-export default function ProjectCard({ 
-  title, 
-  description, 
-  tags, 
-  imageSrc, 
+export default function ProjectCard({
+  title,
+  description,
+  tags,
+  imageSrc,
   githubUrl,
   demoUrl,
-  isActive, 
-  onActivate, 
-  onDeactivate 
+  isActive,
+  onActivate,
+  onDeactivate,
 }) {
   return (
     <div
@@ -40,7 +40,7 @@ export default function ProjectCard({
         <h3 className="text-xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors">
           {title}
         </h3>
-        
+
         <p className="text-slate-300 text-sm mt-2 leading-relaxed">
           {description}
         </p>

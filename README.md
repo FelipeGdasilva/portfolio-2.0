@@ -12,19 +12,19 @@ Este projeto combina a exibição de portfólio pessoal com uma interface conver
 
 ## ✨ Funcionalidades Principais
 
-* **Assistente Virtual Interativa (Hina):** Chat com respostas automatizadas e controle dinâmico do estado da aplicação.
-* **Destaque Dinâmico de Cards:** Destaque visual dos projetos (`Sonic Battle Universe`, `Henshin.AI`, `Hina Landing Page`) baseado nas respostas da assistente.
-* **Interface Responsiva:** Construída com Tailwind CSS para garantir excelente usabilidade em desktop e dispositivos móveis.
-* **Auto-scroll no Chat:** Navegação fluida de histórico utilizando hooks do React (`useEffect` / `useRef`).
+- **Assistente Virtual Interativa (Hina):** Chat com respostas automatizadas e controle dinâmico do estado da aplicação.
+- **Destaque Dinâmico de Cards:** Destaque visual dos projetos (`Sonic Battle Universe`, `Henshin.AI`, `Hina Landing Page`) baseado nas respostas da assistente.
+- **Interface Responsiva:** Construída com Tailwind CSS para garantir excelente usabilidade em desktop e dispositivos móveis.
+- **Auto-scroll no Chat:** Navegação fluida de histórico utilizando hooks do React (`useEffect` / `useRef`).
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Front-end:** React.js / Next.js
-* **Estilização:** Tailwind CSS
-* **Linguagem:** JavaScript (ES6+)
-* **Controle de Versão:** Git / GitHub
+- **Front-end:** React.js / Next.js
+- **Estilização:** Tailwind CSS
+- **Linguagem:** JavaScript (ES6+)
+- **Controle de Versão:** Git / GitHub
 
 ---
 
@@ -46,3 +46,4 @@ npm install
 ´´´bash
 npm run dev
 ´´´
+```
