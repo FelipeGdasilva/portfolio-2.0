@@ -14,7 +14,7 @@ const HINA_RESPONSES = {
   },
   sonic: {
     image: "/images/hina-focused.png", // Imagem focada
-    text: "O Sonic Battle Universe foca em UX e Clean Code! Migramos de React para Next.js e Tailwind CSS para deixar a performance e o SEO voando. 🦔⚡",
+    text: "O Sonic Battle Universe conta com suporte i18n (PT/EN), atalhos de teclado e performance incrível! Migrado para Next.js, TypeScript e Tailwind CSS. 🦔⚡",
   },
   "hina-landing": {
     image: "/images/hina-focused.png", // Imagem focada

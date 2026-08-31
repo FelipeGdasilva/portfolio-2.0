@@ -8,25 +8,25 @@ O objetivo do projeto é proporcionar uma experiência moderna para recrutadores
 
 ## ✨ Funcionalidades
 
-* 🤖 **Assistente Virtual (Hina)**
+- 🤖 **Assistente Virtual (Hina)**
 
-  * Chat inteligente integrado a um backend com LLM.
-  * Responde perguntas sobre minha experiência, tecnologias e projetos.
+  - Chat inteligente integrado a um backend com LLM.
+  - Responde perguntas sobre minha experiência, tecnologias e projetos.
 
-* 💻 **Showcase de Projetos**
+- 💻 **Showcase de Projetos**
 
-  * Cards interativos desenvolvidos em React.
-  * Links diretos para o repositório no GitHub.
-  * Preview online via Vercel.
+  - Cards interativos desenvolvidos em React.
+  - Links diretos para o repositório no GitHub.
+  - Preview online via Vercel.
 
-* 📱 **Design Responsivo**
+- 📱 **Design Responsivo**
 
-  * Interface moderna e adaptável para desktop, tablet e dispositivos móveis.
-  * Componentes reutilizáveis e organização modular.
+  - Interface moderna e adaptável para desktop, tablet e dispositivos móveis.
+  - Componentes reutilizáveis e organização modular.
 
-* 📬 **Contato Rápido**
+- 📬 **Contato Rápido**
 
-  * Acesso direto ao LinkedIn e GitHub através da interface.
+  - Acesso direto ao LinkedIn e GitHub através da interface.
 
 ---
 
@@ -34,23 +34,23 @@ O objetivo do projeto é proporcionar uma experiência moderna para recrutadores
 
 ### Front-end
 
-* React
-* Next.js
-* JavaScript (ES6+)
-* Tailwind CSS
+- React
+- Next.js
+- JavaScript (ES6+)
+- Tailwind CSS
 
 ### Backend & IA
 
-* Node.js
-* API Routes (Next.js)
-* Integração com LLM para a assistente Hina
+- Node.js
+- API Routes (Next.js)
+- Integração com LLM para a assistente Hina
 
 ### Ferramentas
 
-* Git
-* GitHub
-* VS Code
-* Vercel
+- Git
+- GitHub
+- VS Code
+- Vercel
 
 ---
 
@@ -67,7 +67,6 @@ git clone https://github.com/FelipeGdasilva/portfolio-2.0.git
 ```bash
 cd portfolio-2.0
 ```
-
 
 ### 3. Instale as dependências
 
@@ -88,7 +87,6 @@ http://localhost:3000
 ```
 
 ---
-
 
 ## 🌐 Deploy
 

@@ -18,10 +18,10 @@ Projetos do Felipe que você deve apresentar em detalhes quando perguntado:
    - Destaque: Arquitetura limpa com um Hook Customizado (useTimer) criado do zero para isolar a regra de negócio do componente.
 
 2. Sonic Battle Universe:
-   - O que é: Aplicação interativa temática baseada no universo de Sonic Battle, focada em UX e alta performance visual.
-   - Desafio Técnico: Migração de arquitetura do React tradicional para Next.js, otimização de renderização e estruturação com Tailwind CSS.
-   - Tecnologias: React, Next.js, TypeScript e Tailwind CSS.
-   - Destaque: Refatoração focada em Clean Code, melhoria de SEO e performance de carregamento.
+   - O que é: Aplicação interativa temática baseada no universo de Sonic Battle, focada em UX retro arcade e alta performance.
+   - Desafio Técnico: Migração de arquitetura de React para Next.js, implementação de internacionalização (i18n) dinâmica e suporte a acessibilidade via teclado.
+   - Tecnologias: Next.js, TypeScript, Tailwind CSS e Vercel.
+   - Destaque: Suporte a múltiplos idiomas (PT/EN), navegação por atalhos de teclado (X/Esc), refatoração em Clean Code e deploy ativo na Vercel (https://sonic-battle-universe.vercel.app).
 
 3. Henshin.AI:
    - O que é: Assistente e plataforma de automação inteligente integrada com n8n e IA.

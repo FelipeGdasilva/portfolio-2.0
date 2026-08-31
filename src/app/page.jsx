@@ -151,9 +151,10 @@ export default function Home() {
 
         <ProjectCard
           title="Sonic Battle Universe"
-          description="Aplicação web temática com alta performance visual, refatoração em Clean Code, SEO aprimorado e migração para Next.js."
-          tags={["React", "Next.js", "TypeScript", "Tailwind CSS"]}
+          description="Aplicação temática em Next.js com suporte a i18n (PT/EN), acessibilidade por teclado, design retro arcade e deploy ativo na Vercel."
+          tags={["Next.js", "TypeScript", "Tailwind CSS", "i18n"]}
           githubUrl="https://github.com/FelipeGdasilva/Sonic-Battle-Universe"
+          deployUrl="https://sonic-battle-universe.vercel.app"
           isActive={activeProject === "sonic"}
           onActivate={() => setActiveProject("sonic")}
           imageSrc="/images/sonic-battle-universe.png"
