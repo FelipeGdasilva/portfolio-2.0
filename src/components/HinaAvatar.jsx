@@ -10,7 +10,7 @@ const HINA_RESPONSES = {
   },
   henshin: {
     image: "/images/hina-focused.png", // Imagem focada
-    text: "O Henshin.AI foi um desafio animal! Usei n8n e IA para criar um fluxo inteligente que entende a intenção do usuário sem quebrar por erros de digitação. 🤖🔥",
+    text: "O Henshin.AI foi reconstruído em Next.js 15 e TypeScript! Agora ele analisa o sentimento com Gemini 2.5 e busca os animes direto na Kitsu API. 🤖🔥",
   },
   sonic: {
     image: "/images/hina-focused.png", // Imagem focada

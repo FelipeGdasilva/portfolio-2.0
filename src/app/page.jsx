@@ -140,8 +140,14 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 w-full max-w-4xl">
         <ProjectCard
           title="Henshin.AI"
-          description="Assistente e automação inteligente com fluxos n8n, webhooks e IA generativa com resiliência contra falhas de execução."
-          tags={["Node.js", "Express", "n8n", "Gemini API"]}
+          description="Aplicação Fullstack de recomendação de animes baseada no sentimento do usuário, integrando IA generativa e consumo de API externa."
+          tags={[
+            "Next.js 15",
+            "TypeScript",
+            "Tailwind CSS",
+            "Gemini API",
+            "Kitsu API",
+          ]}
           githubUrl="https://github.com/FelipeGdasilva/Henshin.AI"
           isActive={activeProject === "henshin"}
           imageSrc="/images/henshin.ai.png"
