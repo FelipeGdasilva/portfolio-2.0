@@ -2,22 +2,22 @@
 
 import Image from "next/image";
 
-// Configuração das expressões e falas padrão da Hina
+
 const HINA_RESPONSES = {
   idle: {
-    image: "/images/hina-default.png", // Sua imagem dela tomando café
+    image: "/images/hina-default.png", 
     text: "Olá! Sou a Hina. Passe o mouse sobre os projetos ou converse comigo no chat para saber mais! ☕⚡",
   },
   henshin: {
-    image: "/images/hina-focused.png", // Imagem focada
+    image: "/images/hina-focused.png", 
     text: "O Henshin.AI foi reconstruído em Next.js 15 e TypeScript! Agora ele analisa o sentimento com Gemini 2.5 e busca os animes direto na Kitsu API. 🤖🔥",
   },
   sonic: {
-    image: "/images/hina-focused.png", // Imagem focada
+    image: "/images/hina-focused.png", 
     text: "O Sonic Battle Universe conta com suporte i18n (PT/EN), atalhos de teclado e performance incrível! Migrado para Next.js, TypeScript e Tailwind CSS. 🦔⚡",
   },
   "hina-landing": {
-    image: "/images/hina-focused.png", // Imagem focada
+    image: "/images/hina-focused.png", 
     text: "O Hina Arena é focado em treino de boxe! É uma SPA 100% offline que gerencia rounds e pausas com um Hook Customizado (useTimer) isolando a regra de negócio. 🥊⚡",
   },
 };

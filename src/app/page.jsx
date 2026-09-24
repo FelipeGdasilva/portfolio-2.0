@@ -20,7 +20,7 @@ export default function Home() {
 
   const chatEndRef = useRef(null);
 
-  // Permite enviar com 'Enter' mantendo 'Shift + Enter' para quebras de linha
+  
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -45,7 +45,7 @@ export default function Home() {
     setPergunta("");
 
     try {
-      // 2. Chamada real para a API da Hina via backend
+    
       const respostaAPI = await fetch("/api/chat", {
         method: "POST",
         headers: {
@@ -60,7 +60,7 @@ export default function Home() {
         throw new Error(data.error || "Erro na API da Hina");
       }
 
-      // 3. Troca do Card de Projeto na tela com base no assunto falado
+      
       const textoBaixo = textoUsuario.toLowerCase();
       if (textoBaixo.includes("sonic")) {
         setActiveProject("sonic");
@@ -73,7 +73,7 @@ export default function Home() {
         setActiveProject("hina-landing");
       }
 
-      // 4. Exibe no chat a resposta REAL gerada pela Hina
+      
       setMensagens((prev) => [
         ...prev,
         { id: Date.now() + 1, text: data.resposta, sender: "hina" },
@@ -93,7 +93,7 @@ export default function Home() {
 
   return (
     <main className="p-8 bg-slate-950 min-h-screen text-white flex flex-col items-center justify-center">
-      {/* Seção de Redes / Contato Direto */}
+      
       <div className="flex items-center gap-4 mt-6">
         <a
           href="https://www.linkedin.com/in/felipe-gomes-silva-dev"
@@ -133,10 +133,10 @@ export default function Home() {
 
       <AboutSection />
 
-      {/* Componente da Hina que recebe o status atual */}
+      
       <HinaAvatar currentStatus={activeProject} />
 
-      {/* Grid de Cards dos Projetos */}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 w-full max-w-4xl">
         <ProjectCard
           title="Henshin.AI"
@@ -182,7 +182,7 @@ export default function Home() {
 
       <TechSkills />
 
-      {/* Seção do Chat Controlado */}
+      
       <div className="w-full max-w-md mx-auto mt-8 px-4">
         <div className="flex flex-col gap-4 w-full max-w-md max-auto mb-4 p-4">
           {mensagens.map((msg) => (

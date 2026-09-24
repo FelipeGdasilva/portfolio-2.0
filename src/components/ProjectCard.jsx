@@ -23,7 +23,7 @@ export default function ProjectCard({
           : "bg-slate-900/60 border border-slate-800 hover:border-purple-500/50 shadow-lg hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]"
       }`}
     >
-      {/* Container da Capa do Projeto */}
+      
       {imageSrc && (
         <div className="relative w-full h-48 overflow-hidden bg-slate-950">
           <Image
@@ -35,7 +35,7 @@ export default function ProjectCard({
         </div>
       )}
 
-      {/* Conteúdo Interno */}
+      
       <div className="p-6">
         <h3 className="text-xl font-bold text-purple-400 group-hover:text-purple-300 transition-colors">
           {title}
@@ -45,7 +45,7 @@ export default function ProjectCard({
           {description}
         </p>
 
-        {/* Tags */}
+        
         <div className="flex gap-2 mt-4 flex-wrap">
           {tags.map((tag, index) => (
             <span
