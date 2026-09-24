@@ -37,7 +37,7 @@ export default function Home() {
 
     if (!pergunta.trim()) return;
 
-    // 1. Adiciona a mensagem do usuário no histórico e limpa o input
+  
     const novaMensagem = { id: Date.now(), text: pergunta, sender: "user" };
     setMensagens((prev) => [...prev, novaMensagem]);
 
