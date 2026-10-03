@@ -20,7 +20,6 @@ export default function Home() {
 
   const chatEndRef = useRef(null);
 
-  
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -45,7 +44,6 @@ export default function Home() {
     setPergunta("");
 
     try {
-    
       const respostaAPI = await fetch("/api/chat", {
         method: "POST",
         headers: {
@@ -60,20 +58,25 @@ export default function Home() {
         throw new Error(data.error || "Erro na API da Hina");
       }
 
-      
       const textoBaixo = textoUsuario.toLowerCase();
+
       if (textoBaixo.includes("sonic")) {
         setActiveProject("sonic");
       } else if (textoBaixo.includes("henshin")) {
         setActiveProject("henshin");
       } else if (
+        textoBaixo.includes("hina.ai") ||
+        textoBaixo.includes("hina ai") ||
+        textoBaixo.includes("assistente")
+      ) {
+        setActiveProject("hina-ai");
+      } else if (
         textoBaixo.includes("hina") ||
-        textoBaixo.includes("landing")
+        textoBaixo.includes("landing") ||
+        textoBaixo.includes("arena")
       ) {
         setActiveProject("hina-landing");
       }
-
-      
       setMensagens((prev) => [
         ...prev,
         { id: Date.now() + 1, text: data.resposta, sender: "hina" },
@@ -93,7 +96,6 @@ export default function Home() {
 
   return (
     <main className="p-8 bg-slate-950 min-h-screen text-white flex flex-col items-center justify-center">
-      
       <div className="flex items-center gap-4 mt-6">
         <a
           href="https://www.linkedin.com/in/felipe-gomes-silva-dev"
@@ -133,10 +135,8 @@ export default function Home() {
 
       <AboutSection />
 
-      
       <HinaAvatar currentStatus={activeProject} />
 
-      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 w-full max-w-4xl">
         <ProjectCard
           title="Henshin.AI"
@@ -149,6 +149,7 @@ export default function Home() {
             "Kitsu API",
           ]}
           githubUrl="https://github.com/FelipeGdasilva/Henshin.AI"
+          demoUrl={"https://henshin-ai-ten.vercel.app"}
           isActive={activeProject === "henshin"}
           imageSrc="/images/henshin.ai.png"
           onActivate={() => setActiveProject("henshin")}
@@ -160,7 +161,7 @@ export default function Home() {
           description="Aplicação temática em Next.js com suporte a i18n (PT/EN), acessibilidade por teclado, design retro arcade e deploy ativo na Vercel."
           tags={["Next.js", "TypeScript", "Tailwind CSS", "i18n"]}
           githubUrl="https://github.com/FelipeGdasilva/Sonic-Battle-Universe"
-          deployUrl="https://sonic-battle-universe.vercel.app"
+          demoUrl="https://sonic-battle-universe.vercel.app"
           isActive={activeProject === "sonic"}
           onActivate={() => setActiveProject("sonic")}
           imageSrc="/images/sonic-battle-universe.png"
@@ -178,11 +179,28 @@ export default function Home() {
           onActivate={() => setActiveProject("hina-landing")}
           onDeactivate={() => setActiveProject("idle")}
         />
+
+        <ProjectCard
+          title="Hina AI"
+          description="Assistente conversacional inteligente integrada à SDK oficial do Google Gemini, com respostas dinâmicas em Markdown e interface interativa."
+          tags={[
+            "Next.js 15",
+            "TypeScript",
+            "Tailwind CSS",
+            "Gemini API",
+            "Google GenAI SDK",
+          ]}
+          githubUrl="https://github.com/FelipeGdasilva/hina-assistente"
+          demoUrl="https://hina-assistente.vercel.app"
+          isActive={activeProject === "hina-ai"}
+          imageSrc="/images/hina-ai.png"
+          onActivate={() => setActiveProject("hina-ai")}
+          onDeactivate={() => setActiveProject("idle")}
+        />
       </div>
 
       <TechSkills />
 
-      
       <div className="w-full max-w-md mx-auto mt-8 px-4">
         <div className="flex flex-col gap-4 w-full max-w-md max-auto mb-4 p-4">
           {mensagens.map((msg) => (

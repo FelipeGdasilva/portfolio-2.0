@@ -2,32 +2,33 @@
 
 import Image from "next/image";
 
-
 const HINA_RESPONSES = {
   idle: {
-    image: "/images/hina-default.png", 
+    image: "/images/hina-default.png",
     text: "Olá! Sou a Hina. Passe o mouse sobre os projetos ou converse comigo no chat para saber mais! ☕⚡",
   },
   henshin: {
-    image: "/images/hina-focused.png", 
+    image: "/images/hina-focused.png",
     text: "O Henshin.AI foi reconstruído em Next.js 15 e TypeScript! Agora ele analisa o sentimento com Gemini 2.5 e busca os animes direto na Kitsu API. 🤖🔥",
   },
   sonic: {
-    image: "/images/hina-focused.png", 
+    image: "/images/hina-focused.png",
     text: "O Sonic Battle Universe conta com suporte i18n (PT/EN), atalhos de teclado e performance incrível! Migrado para Next.js, TypeScript e Tailwind CSS. 🦔⚡",
   },
   "hina-landing": {
-    image: "/images/hina-focused.png", 
+    image: "/images/hina-focused.png",
     text: "O Hina Arena é focado em treino de boxe! É uma SPA 100% offline que gerencia rounds e pausas com um Hook Customizado (useTimer) isolando a regra de negócio. 🥊⚡",
+  },
+  "hina-ai": {
+    image: "/images/hina-focused.png",
+    text: "A Hina AI é uma assistente conversacional completa! Ela se comunica em tempo real via Gemini API SDK com tratamento dinâmico de Markdown. 🤖✨",
   },
 };
 
 export default function HinaAvatar({ currentStatus }) {
   return (
     <div className="flex flex-col items-center md:flex-row gap-6 p-6 bg-slate-900/50 rounded-2xl border border-purple-500/30 backdrop-blur-sm max-w-2xl mx-auto my-10">
-      
       <div className="relative flex-1 bg-purple-950/40 border border-purple-500/40 p-4 rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.1)]">
-        
         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 md:left-auto md:right-2 md:top-1/2 md:-translate-y-1/2 md:bottom-auto w-4 h-4 bg-purple-950 border-r border-b border-purple-500/40 rotate-45"></div>
 
         <p className="text-purple-200 text-sm font-medium leading-relaxed animate-fade-in">
@@ -35,7 +36,6 @@ export default function HinaAvatar({ currentStatus }) {
         </p>
       </div>
 
-      
       <div className="w-44 h-44 rounded-full overflow-hidden border-2 border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.3)] transition-all duration-300 transform hover:scale-105 bg-slate-950 flex items-center justify-center relative">
         <Image
           key={currentStatus}
